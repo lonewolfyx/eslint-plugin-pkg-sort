@@ -1,0 +1,62 @@
+{
+    "name": "eslint-plugin-pkg",
+    "type": "module",
+    "version": "0.0.0-alpha.0.1",
+    "description": "Eslint plugin for package.json",
+    "author": "lonewolfyx",
+    "license": "MIT",
+    "homepage": "https://github.com/lonewolfyx/eslint-plugin-packagejson#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lonewolfyx/eslint-plugin-packagejson.git"
+    },
+    "bugs": "https://github.com/lonewolfyx/eslint-plugin-packagejson/issues",
+    "keywords": [],
+    "exports": {
+        ".": "./dist/index.mjs",
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/index.mjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "tsdown --watch",
+        "build": "tsdown",
+        "test": "vitest",
+        "release": "npm publish",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix",
+        "prepublishOnly": "npm run build",
+        "prepare": "simple-git-hooks"
+    },
+    "dependencies": {
+        "eslint-plugin-jsonc": "^2.21.0",
+        "jsonc-eslint-parser": "^2.4.2"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^5.2.1",
+        "@lonewolfyx/tsconfig": "^0.0.6",
+        "@types/node": "^24.3.0",
+        "eslint": "^9.34.0",
+        "lint-staged": "^16.1.5",
+        "simple-git-hooks": "^2.13.1",
+        "tsdown": "^0.14.1",
+        "tsup": "^8.5.0",
+        "tsx": "^4.20.5",
+        "typescript": "^5.9.2",
+        "vitest": "^4.0.17"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org",
+        "access": "public"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged"
+    },
+    "lint-staged": {
+        "*": "eslint --fix"
+    }
+}
