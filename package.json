@@ -34,7 +34,7 @@
     },
     "dependencies": {
         "eslint-plugin-jsonc": "^2.21.0",
-        "jsonc-eslint-parser": "^2.4.2"
+        "jsonc-eslint-parser": "^3.0.0"
     },
     "devDependencies": {
         "@antfu/eslint-config": "^5.2.1",
